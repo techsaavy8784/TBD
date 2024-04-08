@@ -116,8 +116,7 @@ import (
 )
 
 const (
-	AccountAddressPrefix = "tbd"
-	Name                 = "tbd"
+	Name = "tbd"
 )
 
 // this line is used by starport scaffolding # stargate/wasm/app/enabledProposals
@@ -726,10 +725,6 @@ func New(
 	app.MountKVStores(keys)
 	app.MountTransientStores(tkeys)
 	app.MountMemoryStores(memKeys)
-
-	// initialize BaseApp
-	app.SetInitChainer(app.InitChainer)
-	app.SetBeginBlocker(app.BeginBlocker)
 
 	// initialize BaseApp
 	options := HandlerOptions{
