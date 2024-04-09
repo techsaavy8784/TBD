@@ -18,6 +18,6 @@ type BankKeeper interface {
 	SpendableCoins(ctx sdk.Context, addr sdk.AccAddress) sdk.Coins
 	SendCoins(ctx sdk.Context, fromAddr sdk.AccAddress, toAddr sdk.AccAddress, amt sdk.Coins) error
 	MintCoins(ctx sdk.Context, moduleName string, amt sdk.Coins) error
-	buryCoins(ctx sdk.Context, addr sdk.AccAddress, amt sdk.Coins) error
+	// burnCoins(ctx sdk.Context, addr sdk.AccAddress, amt sdk.Coins) error
 	// Methods imported from bank should be defined here
 }

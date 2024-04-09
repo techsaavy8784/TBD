@@ -46726,8 +46726,7 @@ paths:
                       type: integer
                       format: int32
                     supply:
-                      type: integer
-                      format: int32
+                      type: string
                     manager:
                       type: string
               pagination:
@@ -46858,8 +46857,7 @@ paths:
                     type: integer
                     format: int32
                   supply:
-                    type: integer
-                    format: int32
+                    type: string
                   manager:
                     type: string
         default:
@@ -75363,15 +75361,16 @@ definitions:
         type: integer
         format: int32
       supply:
-        type: integer
-        format: int32
+        type: string
       manager:
         type: string
   tbd.tokenfactory.MsgCreateDenomResponse:
     type: object
-  tbd.tokenfactory.MsgDeleteDenomResponse:
+  tbd.tokenfactory.MsgMintAndSendTokensResponse:
     type: object
   tbd.tokenfactory.MsgUpdateDenomResponse:
+    type: object
+  tbd.tokenfactory.MsgUpdateOwnerResponse:
     type: object
   tbd.tokenfactory.Params:
     type: object
@@ -75394,8 +75393,7 @@ definitions:
               type: integer
               format: int32
             supply:
-              type: integer
-              format: int32
+              type: string
             manager:
               type: string
       pagination:
@@ -75440,8 +75438,7 @@ definitions:
             type: integer
             format: int32
           supply:
-            type: integer
-            format: int32
+            type: string
           manager:
             type: string
   tbd.tokenfactory.QueryParamsResponse:

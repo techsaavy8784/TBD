@@ -12,9 +12,9 @@ import (
 
 func CmdCreateDenom() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "create-denom [denom] [description] [ticker] [precision] [supply]",
+		Use:   "create-denom [denom] [description] [ticker] [precision]",
 		Short: "Create a new Denom",
-		Args:  cobra.ExactArgs(5),
+		Args:  cobra.ExactArgs(4),
 		RunE: func(cmd *cobra.Command, args []string) (err error) {
 			// Get indexes
 			indexDenom := args[0]
@@ -53,9 +53,9 @@ func CmdCreateDenom() *cobra.Command {
 
 func CmdUpdateDenom() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "update-denom [denom] [description] [ticker] [precision] [supply]",
+		Use:   "update-denom [denom] [description] [ticker]",
 		Short: "Update a Denom",
-		Args:  cobra.ExactArgs(5),
+		Args:  cobra.ExactArgs(3),
 		RunE: func(cmd *cobra.Command, args []string) (err error) {
 			// Get indexes
 			indexDenom := args[0]
@@ -63,14 +63,6 @@ func CmdUpdateDenom() *cobra.Command {
 			// Get value arguments
 			argDescription := args[1]
 			argTicker := args[2]
-			argPrecision, err := cast.ToInt32E(args[3])
-			if err != nil {
-				return err
-			}
-			argSupply, err := cast.ToInt32E(args[4])
-			if err != nil {
-				return err
-			}
 
 			clientCtx, err := client.GetClientTxContext(cmd)
 			if err != nil {
@@ -82,8 +74,6 @@ func CmdUpdateDenom() *cobra.Command {
 				indexDenom,
 				argDescription,
 				argTicker,
-				argPrecision,
-				argSupply,
 			)
 			if err := msg.ValidateBasic(); err != nil {
 				return err

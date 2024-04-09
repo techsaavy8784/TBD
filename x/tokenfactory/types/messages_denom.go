@@ -71,8 +71,6 @@ func NewMsgUpdateDenom(
 	denom string,
 	description string,
 	ticker string,
-	precision int32,
-	supply int32,
 
 ) *MsgUpdateDenom {
 	return &MsgUpdateDenom{
@@ -80,8 +78,6 @@ func NewMsgUpdateDenom(
 		Denom:       denom,
 		Description: description,
 		Ticker:      ticker,
-		Precision:   precision,
-		Supply:      supply,
 	}
 }
 

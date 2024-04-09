@@ -18,7 +18,7 @@ func (k msgServer) CreateDenom(goCtx context.Context, msg *types.MsgCreateDenom)
 		msg.Denom,
 	)
 	if isFound {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "index already set")
+		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "denom already set")
 	}
 
 	var denom = types.Denom{
@@ -27,7 +27,6 @@ func (k msgServer) CreateDenom(goCtx context.Context, msg *types.MsgCreateDenom)
 		Description: msg.Description,
 		Ticker:      msg.Ticker,
 		Precision:   msg.Precision,
-		Supply:      msg.Supply,
 	}
 
 	k.SetDenom(
@@ -59,8 +58,8 @@ func (k msgServer) UpdateDenom(goCtx context.Context, msg *types.MsgUpdateDenom)
 		Denom:       msg.Denom,
 		Description: msg.Description,
 		Ticker:      msg.Ticker,
-		Precision:   msg.Precision,
-		Supply:      msg.Supply,
+		Precision:   valFound.Precision,
+		Supply:      valFound.Supply,
 	}
 
 	k.SetDenom(ctx, denom)
