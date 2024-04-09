@@ -31,7 +31,4 @@ genesis:
     staking:
       params:
         bond_denom: utbd
-        historical_entries: "10"
-        max_validators: "10"
-        unbonding_time: 300000000000ns
   chain_id: tbd-local-1
