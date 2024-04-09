@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package tbd.tokenfactory;
+
+import "tbd/tokenfactory/denom.proto";
+
+option go_package = "tbd/x/tokenfactory/types";
+
+// Msg defines the Msg service.
+service Msg {
+  rpc CreateDenom (MsgCreateDenom) returns (MsgCreateDenomResponse);
+  rpc UpdateDenom (MsgUpdateDenom) returns (MsgUpdateDenomResponse);
+}
+message MsgCreateDenom {
+  string manager     = 1;
+  string denom       = 2;
+  string description = 3;
+  string ticker      = 4;
+  int32  precision   = 5;
+  int32  supply      = 6;
+}
+
+message MsgCreateDenomResponse {}
+
+message MsgUpdateDenom {
+  string manager     = 1;
+  string denom       = 2;
+  string description = 3;
+  string ticker      = 4;
+  int32  precision   = 5;
+  int32  supply      = 6;
+}
+
+message MsgUpdateDenomResponse {}
+
+
+
