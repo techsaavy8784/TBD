@@ -17,7 +17,7 @@ const (
 	// - Crisis parameters: constant fee denomination used for spam prevention to check broken invariant
 	UTBD string = "utbd"
 
-	// BaseDenomUnit defines the base denomination unit for RealioNetwork.
+	// BaseDenomUnit defines the base denomination unit for TBDnetwork.
 	// 1 tbd = 1x10^{BaseDenomUnit} utbd
 	BaseDenomUnit = 18
 
@@ -34,7 +34,7 @@ func NewTBDCoin(amount sdkmath.Int) sdk.Coin {
 	return sdk.NewCoin(UTBD, amount)
 }
 
-// NewTBDCoin is a utility function that returns an "utbd" decimal coin with the given sdkmath.Int amount.
+// NewTBDDecCoin is a utility function that returns an "utbd" decimal coin with the given sdkmath.Int amount.
 // The function will panic if the provided amount is negative.
 func NewTBDDecCoin(amount sdkmath.Int) sdk.DecCoin {
 	return sdk.NewDecCoin(UTBD, amount)

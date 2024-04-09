@@ -125,7 +125,7 @@ Example Output:
 The `Params` endpoint allow users to query the current minting parameters
 
 ```sh
-/realionetwork.mint.v1.Query/Params
+/tbdnetwork.mint.v1.Query/Params
 ```
 
 Example:
@@ -153,13 +153,13 @@ A user can query the `mint` module using REST endpoints.
 ### annual-provisions
 
 ```sh
-/realionetwork/mint/v1/annual_provisions
+/tbdnetwork/mint/v1/annual_provisions
 ```
 
 Example:
 
 ```sh
-curl "localhost:1317/realionetwork/mint/v1/annual_provisions"
+curl "localhost:1317/tbdnetwork/mint/v1/annual_provisions"
 ```
 
 Example Output:
@@ -173,13 +173,13 @@ Example Output:
 ### inflation
 
 ```sh
-/realionetwork/mint/v1/inflation
+/tbdnetwork/mint/v1/inflation
 ```
 
 Example:
 
 ```sh
-curl "localhost:1317/realionetwork/mint/v1/inflation"
+curl "localhost:1317/tbdnetwork/mint/v1/inflation"
 ```
 
 Example Output:
@@ -193,13 +193,13 @@ Example Output:
 ### params
 
 ```sh
-/realionetwork/mint/v1/params
+/tbdnetwork/mint/v1/params
 ```
 
 Example:
 
 ```sh
-curl "localhost:1317/realionetwork/mint/v1/params"
+curl "localhost:1317/tbdnetwork/mint/v1/params"
 ```
 
 Example Output:

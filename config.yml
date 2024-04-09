@@ -7,11 +7,9 @@ accounts:
 - name: alice
   coins:
   - 2000000000000000000000000utbd
-  - 2000000000000000000000000staking
 - name: bob
   coins:
   - 2000000000000000000000000utbd
-  - 2000000000000000000000000staking
 client:
   openapi:
     path: docs/static/openapi.yml
@@ -23,7 +21,8 @@ faucet:
 validators:
 - name: alice
   bonded: 100000000000000000000000utbd
-  home: $HOME/.tbd
+- name: bob
+  bonded: 100000000000000000000000utbd
 genesis:
   app_state:
     crisis:

@@ -1,6 +1,7 @@
 package mint
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/cosmos/cosmos-sdk/telemetry"
@@ -20,7 +21,9 @@ func BeginBlocker(ctx sdk.Context, k keeper.Keeper) {
 
 	// recalculate inflation rate
 	totalStakingSupply := k.StakingTokenSupply(ctx, params)
+	fmt.Println("-------------------------------------------------------------------------------------------------------------this is Total Staking Supply-------------------------------------------------------------------------", totalStakingSupply)
 	bondedRatio := k.BondedRatio(ctx)
+	fmt.Println("-------------------------------------------------------------------------------------------------------------this is Bonded Ratio-------------------------------------------------------------------------", bondedRatio)
 	minter.Inflation = params.InflationRate
 	minter.AnnualProvisions = minter.NextAnnualProvisions(params, totalStakingSupply)
 	k.SetMinter(ctx, minter)
