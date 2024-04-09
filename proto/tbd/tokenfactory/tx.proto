@@ -12,6 +12,7 @@ service Msg {
   rpc UpdateDenom       (MsgUpdateDenom      ) returns (MsgUpdateDenomResponse      );
   rpc MintAndSendTokens (MsgMintAndSendTokens) returns (MsgMintAndSendTokensResponse);
   rpc UpdateOwner       (MsgUpdateOwner      ) returns (MsgUpdateOwnerResponse      );
+  rpc BurnTokens        (MsgBurnTokens       ) returns (MsgBurnTokensResponse       );
 }
 message MsgCreateDenom {
   string manager     = 1;
@@ -48,4 +49,12 @@ message MsgUpdateOwner {
 }
 
 message MsgUpdateOwnerResponse {}
+
+message MsgBurnTokens {
+  string manager = 1;
+  string denom   = 2;
+  string amount  = 3;
+}
+
+message MsgBurnTokensResponse {}
 

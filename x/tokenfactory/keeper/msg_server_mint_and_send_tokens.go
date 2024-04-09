@@ -40,12 +40,14 @@ func (k msgServer) MintAndSendTokens(goCtx context.Context, msg *types.MsgMintAn
 		return nil, sdkerrors.Wrap(err, "failed to send coins")
 	}
 
+	balance := k.bankKeeper.GetBalance(ctx, recipientAddress, msg.Denom)
+
 	var denom = types.Denom{
 		Denom:       valfound.Denom,
 		Description: valfound.Description,
 		Ticker:      valfound.Ticker,
 		Precision:   valfound.Precision,
-		Supply:      valfound.Supply + msg.Supply,
+		Supply:      balance.Amount.String(),
 		Manager:     valfound.Manager,
 	}
 

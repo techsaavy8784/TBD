@@ -75364,6 +75364,8 @@ definitions:
         type: string
       manager:
         type: string
+  tbd.tokenfactory.MsgBurnTokensResponse:
+    type: object
   tbd.tokenfactory.MsgCreateDenomResponse:
     type: object
   tbd.tokenfactory.MsgMintAndSendTokensResponse:

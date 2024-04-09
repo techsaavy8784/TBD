@@ -44,6 +44,10 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgUpdateOwner int = 100
 
+	opWeightMsgBurnTokens = "op_weight_msg_burn_tokens"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgBurnTokens int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -141,6 +145,17 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	operations = append(operations, simulation.NewWeightedOperation(
 		weightMsgUpdateOwner,
 		tokenfactorysimulation.SimulateMsgUpdateOwner(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgBurnTokens int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgBurnTokens, &weightMsgBurnTokens, nil,
+		func(_ *rand.Rand) {
+			weightMsgBurnTokens = defaultWeightMsgBurnTokens
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgBurnTokens,
+		tokenfactorysimulation.SimulateMsgBurnTokens(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
 	// this line is used by starport scaffolding # simapp/module/operation

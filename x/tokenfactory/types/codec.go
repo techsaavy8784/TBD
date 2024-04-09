@@ -12,6 +12,7 @@ func RegisterCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&MsgUpdateDenom{}, "tokenfactory/UpdateDenom", nil)
 	cdc.RegisterConcrete(&MsgMintAndSendTokens{}, "tokenfactory/MintAndSendTokens", nil)
 	cdc.RegisterConcrete(&MsgUpdateOwner{}, "tokenfactory/UpdateOwner", nil)
+	cdc.RegisterConcrete(&MsgBurnTokens{}, "tokenfactory/BurnTokens", nil)
 	// this line is used by starport scaffolding # 2
 }
 
@@ -25,6 +26,9 @@ func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 	)
 	registry.RegisterImplementations((*sdk.Msg)(nil),
 		&MsgUpdateOwner{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgBurnTokens{},
 	)
 	// this line is used by starport scaffolding # 3
 
