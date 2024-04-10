@@ -31,4 +31,4 @@ genesis:
     staking:
       params:
         bond_denom: utbd
-  chain_id: tbd-local-1
+  chain_id: TBD
