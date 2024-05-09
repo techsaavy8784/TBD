@@ -1,0 +1,14 @@
+syntax = "proto3";
+package tbd.tokenfactory;
+
+option go_package = "tbd/x/tokenfactory/types";
+
+message Denom {
+  string denom = 1; 
+  string description = 2; 
+  string ticker = 3; 
+  int32 precision = 4; 
+  string supply = 5; 
+  string manager = 6;
+}
+
